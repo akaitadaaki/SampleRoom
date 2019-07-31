@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools" >
+	<data>
+		<variable
+				name="address"
+				type="jp.three_colors.sampleroom.data.entity.Address" />
+	</data>
+	<LinearLayout
+		 android:orientation="horizontal"
+		 android:paddingTop="4dp"
+		 android:paddingBottom="4dp"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/zip"
+			android:layout_width="64dp"
+			android:layout_height="wrap_content"
+			android:text="@{@string/zip(address.zip1,address.zip2)}"
+			tools:text="000-0000"
+		/>
+
+		<TextView
+			android:id="@+id/state"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:text="@{address.stateName}"
+			tools:text="大阪府"
+		/>
+
+		<TextView
+			android:id="@+id/city"
+			android:layout_width="140dp"
+			android:layout_height="wrap_content"
+			android:text="@{address.city}"
+			tools:text="大阪市中央区"
+		/>
+
+		<TextView
+			android:id="@+id/street"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@{address.street}"
+			tools:text="○○○○○○○○○○○○○○"
+		/>
+	</LinearLayout>
+</layout>

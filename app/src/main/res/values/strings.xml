@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SampleRoom</string>
+    <string name="zip">%1$s-%2$s</string>
+    <string name="zip_name">郵便番号</string>
+    <string name="hyphen"> - </string>
+    <string name="search">検索</string>
+    <string name="clear_histories">履歴クリア</string>
+</resources>

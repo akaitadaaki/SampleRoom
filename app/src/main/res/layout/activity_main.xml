@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools" >
+	<data>
+		<variable
+			name="viewModel"
+			type="jp.three_colors.sampleroom.viewmodel.AddressViewModel" />
+
+		<variable
+			name="clickCallback"
+			type="jp.three_colors.sampleroom.MainActivity" />
+	</data>
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			tools:context=".MainActivity">
+
+		<TextView
+			android:id="@+id/zip_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/zip_name"
+			android:layout_marginTop="8dp"
+			android:layout_marginStart="8dp"
+			android:layout_marginEnd="12dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/zip1"
+			app:layout_constraintTop_toTopOf="@id/zip1"
+			app:layout_constraintBottom_toBottomOf="@id/zip1"
+			/>
+
+		<EditText
+				android:id="@+id/zip1"
+				android:layout_width="42dp"
+				android:layout_height="wrap_content"
+				android:inputType="number"
+				android:maxLength="3"
+				android:text="@={viewModel.zip1}"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintStart_toEndOf="@id/zip_title"
+				app:layout_constraintEnd_toStartOf="@id/division"
+				tools:text="000"
+				/>
+		<TextView
+			android:id="@+id/division"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/hyphen"
+			app:layout_constraintTop_toTopOf="@id/zip1"
+			app:layout_constraintBottom_toBottomOf="@id/zip1"
+			app:layout_constraintStart_toEndOf="@id/zip1"
+			app:layout_constraintEnd_toStartOf="@id/zip2"
+			/>
+
+		<EditText
+			android:id="@+id/zip2"
+			android:layout_width="56dp"
+			android:layout_height="wrap_content"
+			android:inputType="number"
+			android:maxLength="4"
+			android:text="@={viewModel.zip2}"
+			app:layout_constraintTop_toTopOf="@id/zip1"
+			app:layout_constraintBottom_toBottomOf="@id/zip1"
+			app:layout_constraintStart_toEndOf="@id/division"
+			tools:text="0000"
+			/>
+
+		<Button
+			android:id="@+id/btn_search"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/search"
+			app:layout_constraintTop_toTopOf="@id/zip1"
+			app:layout_constraintBottom_toBottomOf="@id/zip1"
+			app:layout_constraintStart_toEndOf="@id/zip2"
+			android:onClick="@{() -> clickCallback.onClickSearch()}"
+			/>
+
+		<Button
+			android:id="@+id/btn_clear"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/clear_histories"
+			app:layout_constraintTop_toTopOf="@id/zip1"
+			app:layout_constraintBottom_toBottomOf="@id/zip1"
+			app:layout_constraintEnd_toEndOf="parent"
+			android:onClick="@{() -> clickCallback.onClickClear()}"
+			/>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/list_address"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginTop="20dp"
+			android:paddingStart="4dp"
+			android:paddingEnd="4dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/zip1"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+			tools:listitem="@layout/item_address"
+			/>
+
+
+
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
