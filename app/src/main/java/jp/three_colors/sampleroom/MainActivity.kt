@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         addressViewModel.targetAddress.observe(this, Observer { address ->
             address?.let {
                 if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
-                    Toast.makeText(applicationContext, it.stateName+it.city+it.street, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, it.apiAddress.stateName+it.apiAddress.city+it.apiAddress.street, Toast.LENGTH_SHORT).show()
                 }
             }
         })

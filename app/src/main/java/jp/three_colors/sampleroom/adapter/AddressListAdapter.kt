@@ -56,10 +56,10 @@ class AddressListAdapter: RecyclerView.Adapter<AddressListAdapter.AddressViewHol
                     val old = addressList[oldItemPosition]
 
                     return address.id == old.id
-                            && Objects.equals(address.stateId, old.stateId)
-                            && Objects.equals(address.stateName, old.stateName)
-                            && Objects.equals(address.city, old.city)
-                            && Objects.equals(address.street, old.street)
+                            && Objects.equals(address.apiAddress.state, old.apiAddress.state)
+                            && Objects.equals(address.apiAddress.stateName, old.apiAddress.stateName)
+                            && Objects.equals(address.apiAddress.city, old.apiAddress.city)
+                            && Objects.equals(address.apiAddress.street, old.apiAddress.street)
                 }
             })
 

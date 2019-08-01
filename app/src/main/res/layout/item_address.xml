@@ -26,7 +26,7 @@
 			android:id="@+id/state"
 			android:layout_width="60dp"
 			android:layout_height="wrap_content"
-			android:text="@{address.stateName}"
+			android:text="@{address.apiAddress.stateName}"
 			tools:text="大阪府"
 		/>
 
@@ -34,7 +34,7 @@
 			android:id="@+id/city"
 			android:layout_width="140dp"
 			android:layout_height="wrap_content"
-			android:text="@{address.city}"
+			android:text="@{address.apiAddress.city}"
 			tools:text="大阪市中央区"
 		/>
 
@@ -42,7 +42,7 @@
 			android:id="@+id/street"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="@{address.street}"
+			android:text="@{address.apiAddress.street}"
 			tools:text="○○○○○○○○○○○○○○"
 		/>
 	</LinearLayout>

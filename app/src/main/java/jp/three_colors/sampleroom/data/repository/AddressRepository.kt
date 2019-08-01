@@ -58,7 +58,7 @@ class AddressRepository(private val addressDao: AddressDao) {
             override fun onResponse(call: Call<ApiAddress>, response: Response<ApiAddress>) {
                 if( response.isSuccessful ) {
                     val apiAddress = response.body()!!
-                    val address = Address(zip1+zip2, zip1, zip2, apiAddress.state.toInt(), apiAddress.stateName, apiAddress.city, apiAddress.street)
+                    val address = Address(zip1=zip1, zip2=zip2, apiAddress = apiAddress)
                     insert(address)
                     _address.postValue(address)
                 } else {
