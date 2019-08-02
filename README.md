@@ -5,3 +5,4 @@ Android ViewModel and DataBinding and Room のサンプルです。
 * 取得した住所は Room Database を利用して保存しており、次回以降は Room Database から取得して表示します。
 * 値の取得はや出力は DataBinding にまかせています。
 * 本来は coroutine を利用して非同期させるべきですが、今回は coroutine なしで作成しています。
+* このプログラムはviewmodelのsavedstate未対応など、不完全です。
